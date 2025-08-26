@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rails tailwindcss:*)",
+      "Bash(rails generate:*)",
+      "Bash(rails:*)",
+      "Bash(bin/importmap pin:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
