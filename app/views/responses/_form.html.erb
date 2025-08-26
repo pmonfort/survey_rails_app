@@ -1,0 +1,17 @@
+<%= form_with(model: response, local: true, class: "space-y-6") do |form| %>
+  <div class="survey-box p-4 bg-white shadow sm:rounded-lg" data-controller="score">
+    <input type="text" name="response[text]" class="w-full text-center text-xl font-semibold text-gray-900 bg-gray-100 border border-gray-300 rounded-md p-2 mb-4" />
+    <input type="hidden" name="response[score]" id="response_score" data-score-target="input" />
+
+    <div class="flex flex-wrap gap-3 justify-center mb-6">
+      <% (1..10).each do |score| %>
+        <button type="button" 
+                class="flex-shrink-0 w-12 h-12 rounded-md shadow-sm border border-gray-300 hover:bg-gray-50 transition-colors font-medium flex items-center justify-center" 
+                data-score-target="button" 
+                data-action="click->score#selectScore"><%= score %></button>
+      <% end %>
+    </div>
+
+    <%= form.submit "SEND", class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+  </div>
+<% end %>

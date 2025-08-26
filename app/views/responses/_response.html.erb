@@ -1,0 +1,9 @@
+<div id="<%= dom_id response %>" class="space-y-2">
+  <div class="text-sm text-gray-600">
+    <p class="font-medium text-gray-900">Response ID: #<%= response.id %></p>
+    <p>Created: <%= response.created_at.strftime("%B %d, %Y at %l:%M %p") %></p>
+    <% if response.updated_at != response.created_at %>
+      <p>Updated: <%= response.updated_at.strftime("%B %d, %Y at %l:%M %p") %></p>
+    <% end %>
+  </div>
+</div>
